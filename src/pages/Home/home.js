@@ -18,6 +18,19 @@ import { useState } from 'react';
 import background from '../../assets/imagens/background.png';
 
 
+const StyledBoxGrid = styled(Box)`
+  border: solid 5px red;
+  width: '100vh',
+  min-width: '100vh',
+  min-height: '100vh',
+  display: flex;
+  justify-content: center;
+  margin: 0;
+`;
+
+
+
+
 function Home(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(true);
@@ -28,24 +41,30 @@ function Home(props) {
     <Box
       component="div"
       sx={{
-        backgroundImage: `url(${background})`,
         backgroundColor: 'transparent',
         backgroundSize: 'cover',
-        minWidth: '100vh',
-        minHeight: '100vh',
-        marginTop:'50px'
+        width: '100%',
+        height: '100%',
+        margin: '0',
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center',
+        paddingTop: '10%',
+
+
       }}
     >
-      <Grid container>
-        <Grid item xs={6} sm={6} md={6} lg={6}>
+      <StyledBoxGrid>
+        <Grid container>
+          <Grid item xs={6} sm={6} md={6} lg={6}>
+            <Typography> TESTE </Typography>
+          </Grid>
+          <Grid itemxs={6} sm={6} md={6} lg={6} >
 
-          <Typography> TESTE </Typography>
+            <Typography> TESTE2 </Typography>
+          </Grid>
         </Grid>
-        <Grid itemxs={6} sm={6} md={6} lg={6} >
-
-          <Typography> TESTE2 </Typography>
-        </Grid>
-      </Grid>
+      </StyledBoxGrid>
     </Box>
   );
 }
