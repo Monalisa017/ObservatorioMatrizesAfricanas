@@ -12,7 +12,7 @@ function App() {
         backgroundImage:`url(${background})`,
         backgroundColor: 'transparent',
         backgroundSize: 'cover',
-        minWidth: '100vh',
+        minWidth: '250vh !important',
         minHeight: '100vh',
       }}
     >

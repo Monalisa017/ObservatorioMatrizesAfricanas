@@ -24,8 +24,17 @@ const StyledBoxGrid = styled(Box)`
   min-width: '100vh',
   min-height: '100vh',
   display: flex;
-  justify-content: center;
-  margin: 0;
+  justify-content: space-around;
+  margin: 150px;
+`;
+
+const StyledGrid = styled(Grid)`
+  border: solid 15px #fc791e;
+  width: '600px',
+  height:100px,
+  display: flex;
+  justify-content: space-around';
+  margin: auto;
 `;
 
 
@@ -46,24 +55,29 @@ function Home(props) {
         width: '100%',
         height: '100%',
         margin: '0',
-        display:'flex',
-        justifyContent:'center',
-        alignItems:'center',
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
         paddingTop: '10%',
 
 
       }}
     >
       <StyledBoxGrid>
-        <Grid container>
-          <Grid item xs={6} sm={6} md={6} lg={6}>
-            <Typography> TESTE </Typography>
+        <StyledGrid container>
+          <Grid item xs={6} sm={6} md={6} lg={6} style={{border:'solid 10px blue'}}>
+            <Box>
+              <Typography> TESTE </Typography>
+            </Box>
           </Grid>
-          <Grid itemxs={6} sm={6} md={6} lg={6} >
+          <Grid item xs={6} sm={6} md={6} lg={6} style={{border:'solid 10px violet'}}>
 
-            <Typography> TESTE2 </Typography>
+            <Box>
+
+              <Typography> TESTE2 </Typography>
+            </Box>
           </Grid>
-        </Grid>
+        </StyledGrid>
       </StyledBoxGrid>
     </Box>
   );

@@ -108,11 +108,11 @@ function HeaderComponent(props) {
 
 
                 <Grid container item={true}>
-                    <Grid item xs={3} sm={3} md={3} lg={3} sx={{width:'auto', height:'80px',margin:'10px', marginTop:'-10px', display:'flex', justifyItems:'space-between', borderRadius:'5%',boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',}}>
+                    <Grid item xs={3} sm={3} md={3} lg={3} sx={{width:'auto', height:'80px',margin:'10px', marginTop:'-10px', display:'flex', justifyItems:'space-between', borderRadius:'5px',boxShadow: '0 0 0 2px black', backgroundColor:'#5f210e'}}>
                         <Typography
                             variant="h5"
                             component="div"
-                            sx={{ color: '#fff', paddingTop:'7%', width:'auto', height:'70px', fontWeight:600, fontSize:'1.25em', padding:'7%', display:'flex', justifyItems:'space-between'}}
+                            sx={{ color: '#fff', paddingTop:'7%', width:'auto', height:'70px', fontWeight:600, fontSize:'1.25em', padding:'7%', display:'flex', justifyItems:'space-between',color:'#fc791e'}}
                         >
                             Observatório Matrizes Africanas
                         </Typography>
