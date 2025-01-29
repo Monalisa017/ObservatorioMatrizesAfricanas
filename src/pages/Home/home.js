@@ -16,8 +16,9 @@ const StyledGrid = styled(Grid)`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-around;
-  margin: auto;
+  justify-content: center; /* Alinha horizontalmente no centro */
+  align-items: center; /* Alinha verticalmente no centro */
+  margin: 0; /* Remove o margin automático */
 `;
 
 function Home() {
@@ -28,12 +29,12 @@ function Home() {
         backgroundColor: "transparent",
         backgroundSize: "cover",
         width: "100%",
-        height: "100vh",
+        height: "100vh",  /* Garantir que ocupa toda a altura da tela */
         margin: "0",
         display: "flex",
-        justifyContent: "space-around",
-        alignItems: "center",
-        paddingTop: "5%",
+        justifyContent: "center", /* Centraliza horizontalmente */
+        alignItems: "center",  /* Centraliza verticalmente */
+        paddingTop: "5%",  /* Ajustar o espaçamento do topo */
       }}
     >
       <StyledBoxGrid>
@@ -46,10 +47,10 @@ function Home() {
             md={12}
             lg={7}
             style={{
-              border: "none",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              height: "100%",  /* Garantir que o grid ocupa toda a altura disponível */
             }}
           >
             <Box
@@ -61,29 +62,6 @@ function Home() {
               <ImageCarousel />
             </Box>
           </Grid>
-
-          {/* Segundo Grid - Conteúdo */}
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
-            lg={5}
-            style={{
-              border: "none",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Box
-              sx={{
-                textAlign: "center",
-              }}
-            >
-              <CardComponent />
-            </Box>
-          </Grid>
         </StyledGrid>
       </StyledBoxGrid>
     </Box>
@@ -91,4 +69,3 @@ function Home() {
 }
 
 export default Home;
-
