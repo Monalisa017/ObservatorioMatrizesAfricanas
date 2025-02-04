@@ -7,14 +7,18 @@ import { Box, Grid, Typography, Card, CardContent } from '@mui/material';
 // Estilos para a imagem e o carrossel
 import imagemExemplo from '../../assets/imagens/placehoholderPng.webp';
 import imagem1 from '../../assets/imagens/Esu.webp';
-import imagem2 from '../../assets/imagens/Ogun.webp';
-import imagem3 from '../../assets/imagens/Oxossi.webp';
+import imagem2 from '../../assets/imagens/Oya.webp';
+import imagem3 from '../../assets/imagens/Ogun.webp';
+import imagem4 from '../../assets/imagens/Nana.webp';
+import imagem5 from '../../assets/imagens/Oxossi.webp';
 
 const listaDeImagens = [
   { img: imagemExemplo, texto: "Texto para a imagem base", titulo: "Título da Imagem Base" },
   { img: imagem1, texto: "Texto para a primeira imagem", titulo: "Título da Primeira Imagem" },
   { img: imagem2, texto: "Texto para a segunda imagem", titulo: "Título da Segunda Imagem" },
-  { img: imagem3, texto: "Texto para a terceira imagem", titulo: "Título da Terceira Imagem" }
+  { img: imagem3, texto: "Texto para a terceira imagem", titulo: "Título da Terceira Imagem" },
+  { img: imagem4, texto: "Texto para a terceira imagem", titulo: "Título da Quarta Imagem" },
+  { img: imagem5, texto: "Texto para a terceira imagem", titulo: "Título da Quinta Imagem" },
 ];
 
 // Estilização da imagem
