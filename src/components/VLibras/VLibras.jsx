@@ -1,45 +1,28 @@
-import React, { useEffect } from "react";
+import { useEffect } from 'react';
 
 const VLibras = () => {
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "http://localhost:3001/vlibras-plugin.js";  // Usando o proxy local
- // Usando o servidor proxy local
+    const script = document.createElement('script');
+    script.src = 'https://vlibras.gov.br/app/vlibras-plugin.js';
     script.async = true;
-  
+    script.defer = true;
+
     script.onload = () => {
-      if (window.VLibras) {
-        try {
-          console.log("VLibras carregado corretamente");
-          new window.VLibras.Widget("https://vlibras.gov.br/app");
-        } catch (error) {
-          console.error("Erro ao inicializar o Widget VLibras:", error);
-        }
-      } else {
-        console.error("Erro ao carregar o VLibras: objeto não encontrado.");
+      try {
+        new window.VLibras.Widget();
+      } catch (error) {
+        console.error("Erro ao carregar o VLibras:", error);
       }
     };
-  
-    script.onerror = (e) => {
-      console.error("Erro ao carregar o script VLibras:", e);
-    };
-  
+
     document.body.appendChild(script);
-  
+
     return () => {
-      console.log("Componente VLibras desmontado");
+      document.body.removeChild(script);
     };
   }, []);
-  
-  
-  return (
-    <div vw="true" className="enabled">
-      <div vw-access-button="true" className="active"></div>
-      <div vw-plugin-wrapper="true">
-        <div className="vw-plugin-top-wrapper"></div>
-      </div>
-    </div>
-  );
+
+  return <></>;
 };
 
 export default VLibras;
