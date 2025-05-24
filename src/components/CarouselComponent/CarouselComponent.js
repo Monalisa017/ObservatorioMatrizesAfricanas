@@ -88,7 +88,8 @@ const StyledCard = styled(Card)`
   background-color: #f5f5dc; /* Cor de fundo bege */
   border-radius: 12px; /* Bordas arredondadas */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  overflow: hidden;
+    overflow: hidden;
+
   padding: 30px 20px; /* Aumentar o padding para aumentar o card */
   display: flex;
   flex-direction: column;

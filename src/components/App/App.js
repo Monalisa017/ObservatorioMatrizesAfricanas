@@ -3,7 +3,6 @@ import { Box } from '@mui/material';
 import background from '../../assets/imagens/background.png';
 import HeaderComponent from '../HeaderComponent/HeaderComponent';
 import Home from '../../pages/Home/home';
-import VLibras from '../../components/VLibras/VLibras'; // ✅ Importação do VLibras corrigida
 
 function App() {
   return (
@@ -22,9 +21,6 @@ function App() {
       </Box>
       <Box>
         <Home />
-      </Box>
-      <Box style={{backgroundColor:"red"}}>
-        <VLibras /> {/* ✅ VLibras agora está carregado corretamente */}
       </Box>
     </Box>
   );
