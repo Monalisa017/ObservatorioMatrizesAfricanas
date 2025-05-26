@@ -12,14 +12,17 @@ function App() {
         backgroundImage: `url(${background})`,
         backgroundColor: 'transparent',
         backgroundSize: 'cover',
-        minWidth: '250vh !important',
+        backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
+        width: '100%',
+        overflowX: 'hidden',
       }}
     >
-      <Box>
-        <HeaderComponent />
-      </Box>
-      <Box>
+      {/* Header fixo no topo */}
+      <HeaderComponent />
+
+      {/* Conteúdo com padding-top para evitar sobreposição do AppBar */}
+      <Box sx={{ paddingTop: '100px' }}>
         <Home />
       </Box>
     </Box>
