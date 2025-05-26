@@ -10,118 +10,19 @@ import { List, ListItem, ListItemText, ListItemButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import styled from 'styled-components';
 import Imagem from '../AfricaImg/AfricaImg';
-import { Grid } from '@mui/material';
 import { useState } from 'react';
+import {
+  StyledAppBar,
+  StyledListItemNav,
+  StyledListItem,
+  CustomLinkButton,
+  LogoContainer,
+  ObservatorioBox,
+  ObservatorioText,
+} from '../HeaderComponent/HeaderComponent.styled.js';
 
 const drawerWidth = 240;
-
-const StyledAppBar = styled(AppBar)`
-  background-color: #fc791e !important;
-  padding-top: 35px;
-`;
-
-const StyledListItemNav = styled(List)`
-  display: flex;
-  gap: 30px;
-  padding-left: 0;
-  justify-content: flex-start;
-  margin-left: 20px; /* ou ajuste conforme quiser */
-`;
-
-const StyledListItem = styled(ListItem)`
-  padding: 0 !important;
-`;
-
-const CustomLinkButton = styled(ListItemButton)`
-  color: white !important;
-  font-weight: 600;
-  white-space: nowrap;
-  font-size: 1.5rem;
-  padding: 6px 12px;
-
-  &:hover {
-    background-color: #5f210e !important;
-    color: #fc791e !important;
-    border-radius: 5px;
-  }
-`;
-
-const LogoContainer = styled(Box)`
-  display: flex;
-  align-items: center;
-  img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-
-    @media (min-width: 600px) {
-      width: 60px;
-      height: 60px;
-    }
-
-    @media (min-width: 960px) {
-      width: 70px;
-      height: 70px;
-    }
-  }
-`;
-
-const ObservatorioBox = styled(Box)`
-  background-color: #5f210e;
-  border-radius: 5px;
-  box-shadow: 0 0 0 2px black;
-  padding: 15px;
-  display: flex;
-  align-items: start;
-  justify-content: start;
-  flex-wrap: wrap;
-  width: 95%;
-  height: auto;
-  margin-left: 20px;
-  margin-right: auto;
-  margin-bottom: 20px;
-  gap: 10px;
-
-  @media (max-width: 959px) {
-    flex-direction: column;
-    align-items: start;
-    margin: auto; /* Centraliza de novo em telas pequenas */
-    margin-bottom: 20px;
-  }
-
-  @media (min-width: 960px) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
-  @media (min-width: 1200px) {
-    width: 45%;
-    margin-bottom: 20px;
-  }
-`;
-
-const ObservatorioText = styled(Typography)`
-  color: #fc791e;
-  font-weight: 600;
-  font-size: 2.5rem !important;
-  text-align: center;
-  word-break: break-word;
-  width: 100%;
-
-  @media (min-width: 960px) and (max-width: 1199px) {
-    width: auto; /* <- deixa o texto ocupar só o necessário */
-    text-align: left;
-  }
-
-  @media (min-width: 1200px) {
-    font-size: 2.1rem !important;
-  }
-`;
 
 function HeaderComponent(props) {
   const { window } = props;
@@ -207,19 +108,17 @@ function HeaderComponent(props) {
                 Observatório Matrizes Africanas
               </ObservatorioText>
             </ObservatorioBox>
-<Box sx={{ display: 'flex', justifyContent: 'flex-start', flex: 0.9}}>
-  <StyledListItemNav>
-    {navItems.map((item) => (
-      <StyledListItem key={item}>
-        <CustomLinkButton component="a" href={`#${item.replace(/\s+/g, '').toLowerCase()}`}>
-          {item}
-        </CustomLinkButton>
-      </StyledListItem>
-    ))}
-  </StyledListItemNav>
-</Box>
-
-
+            <Box sx={{ display: 'flex', justifyContent: 'flex-start', flex: 0.9 }}>
+              <StyledListItemNav>
+                {navItems.map((item) => (
+                  <StyledListItem key={item}>
+                    <CustomLinkButton component="a" href={`#${item.replace(/\s+/g, '').toLowerCase()}`}>
+                      {item}
+                    </CustomLinkButton>
+                  </StyledListItem>
+                ))}
+              </StyledListItemNav>
+            </Box>
             <Box sx={{ ml: 2 }}>
               <Imagem />
             </Box>
