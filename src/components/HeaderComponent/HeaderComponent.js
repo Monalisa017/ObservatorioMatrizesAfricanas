@@ -61,8 +61,8 @@ function HeaderComponent(props) {
   return (
     <>
       <CssBaseline />
-      <StyledAppBar component="nav" position="fixed">
-        <Toolbar sx={{ padding: 0, position: 'relative', minHeight: '100px !important' }}>
+      <StyledAppBar component="nav" position="fixed" id="header">
+        <Toolbar sx={{ padding: 0, position: 'relative', minHeight: '10px !important' }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"

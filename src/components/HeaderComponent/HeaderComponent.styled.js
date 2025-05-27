@@ -1,10 +1,12 @@
-// components/HeaderComponent/headerComponent.styled.js
 import styled from 'styled-components';
 import { AppBar, Box, List, ListItem, ListItemButton, Typography } from '@mui/material';
 
 export const StyledAppBar = styled(AppBar)`
   background-color: #fc791e !important;
   padding-top: 35px;
+   @media (min-width: 960px) and (max-width: 1199px) {
+    margin-bottom: 5px;
+  }
 `;
 
 export const StyledListItemNav = styled(List)`
@@ -36,6 +38,7 @@ export const CustomLinkButton = styled(ListItemButton)`
 export const LogoContainer = styled(Box)`
   display: flex;
   align-items: center;
+
   img {
     width: 50px;
     height: 50px;
@@ -50,6 +53,11 @@ export const LogoContainer = styled(Box)`
     @media (min-width: 960px) {
       width: 70px;
       height: 70px;
+    }
+
+    @media (min-width: 1200px) {
+      width: 90px;
+      height: 90px;
     }
   }
 `;

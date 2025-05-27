@@ -19,10 +19,12 @@ function App() {
       }}
     >
       {/* Header fixo no topo */}
-      <HeaderComponent />
+      <Box sx={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1100, width: '100%' }}>
+        <HeaderComponent />
+      </Box>
 
-      {/* Conteúdo com padding-top para evitar sobreposição do AppBar */}
-      <Box sx={{ paddingTop: '100px' }}>
+      {/* Conteúdo principal com padding para não ficar embaixo do header */}
+      <Box sx={{ paddingTop: { xs: '230px', sm: '250px', md: '250px', lg:'120', xg:'140' }, px: 2 }}>
         <Home />
       </Box>
     </Box>
