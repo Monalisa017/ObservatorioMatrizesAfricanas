@@ -1,25 +1,47 @@
 import * as React from "react";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import styled from "styled-components";
 import ImageCarousel from "../../components/CarouselComponent/CarouselComponent";
-import CardComponent from "../../components/CardComponent/CardComponent";
 
 const StyledBoxGrid = styled(Box)`
   width: 100%;
-  height: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+`;
+
+const StyledGrid = styled(Grid)`
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-const StyledGrid = styled(Grid)`
+const ImageWrapper = styled(Box)`
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center; /* Alinha horizontalmente no centro */
-  align-items: center; /* Alinha verticalmente no centro */
-  margin: 0; /* Remove o margin automático */
+  max-width: 100%; // Remove limite fixo
+  height: auto; // Permite que a altura se ajuste automaticamente
+
+  // Opcionalmente, pode ajustar o padding em breakpoints para manter o espaçamento
+  @media (min-width: 900px) {
+    padding: 0 32px; // ou o que preferir
+  }
 `;
+
+
+const TextoContainer = styled(Box)`
+  padding: 16px;
+  background-color: #f9f9f9;
+  font-size: 14px;
+
+  @media (min-width: 900px) {
+    font-size: 18px;
+    padding: 32px;
+  }
+`;
+
 
 function Home() {
   return (
@@ -27,43 +49,21 @@ function Home() {
       component="div"
       sx={{
         backgroundColor: "transparent",
-        backgroundSize: "cover",
         width: "100%",
-        height: "100vh",  /* Garantir que ocupa toda a altura da tela */
-        margin: "0",
         display: "flex",
-        justifyContent: "center", /* Centraliza horizontalmente */
-        alignItems: "center",  /* Centraliza verticalmente */
-        paddingTop: "5%",  /* Ajustar o espaçamento do topo */
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
-      <StyledBoxGrid>
-        <StyledGrid container>
-          {/* Primeiro Grid - Imagens */}
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
-            lg={7}
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "100%",  /* Garantir que o grid ocupa toda a altura disponível */
-            }}
-          >
-            <Box
-              sx={{
-                width: "100%",
-                height: "100%",
-              }}
-            >
-              <ImageCarousel />
-            </Box>
-          </Grid>
-        </StyledGrid>
-      </StyledBoxGrid>
+      
+      {/* Container principal */}
+      <Grid item xs={12} lg={10} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: { xs: 1, sm: 2, md: 3 } }}>
+  <ImageWrapper>
+    <ImageCarousel />
+  </ImageWrapper>
+</Grid>
+
+
     </Box>
   );
 }

@@ -12,14 +12,19 @@ function App() {
         backgroundImage: `url(${background})`,
         backgroundColor: 'transparent',
         backgroundSize: 'cover',
-        minWidth: '250vh !important',
+        backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
+        width: '100%',
+        overflowX: 'hidden',
       }}
     >
-      <Box>
+      {/* Header fixo no topo */}
+      <Box sx={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1100, width: '100%' }}>
         <HeaderComponent />
       </Box>
-      <Box>
+
+      {/* Conteúdo principal com padding para não ficar embaixo do header */}
+      <Box sx={{ paddingTop: { xs: '230px', sm: '250px', md: '250px', lg:'120', xg:'140' }, px: 2 }}>
         <Home />
       </Box>
     </Box>
