@@ -24,7 +24,18 @@ function App() {
       </Box>
 
       {/* Conteúdo principal com padding para não ficar embaixo do header */}
-      <Box sx={{ paddingTop: { xs: '230px', sm: '250px', md: '250px', lg:'120', xg:'140' }, px: 2 }}>
+      <Box
+        sx={{
+          paddingTop: {
+            xs: '300px',  // menor padding para telas pequenas pra não sobrepor o header
+            sm: '280px',
+            md: '180px',
+            lg: '250px',
+            xl: '100px',
+          },
+          px: 2,
+        }}
+      >
         <Home />
       </Box>
     </Box>

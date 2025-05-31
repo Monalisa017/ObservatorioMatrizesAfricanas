@@ -4,23 +4,63 @@ import styled from 'styled-components';
 import { Carousel } from 'react-responsive-carousel';
 import { Box, Grid, Typography, Card } from '@mui/material';
 
-import imagemExemplo from '../../assets/imagens/placehoholderPng.webp';
-import imagem1 from '../../assets/imagens/Esu.webp';
-import imagem2 from '../../assets/imagens/Oya.webp';
-import imagem3 from '../../assets/imagens/Ogun.webp';
-import imagem4 from '../../assets/imagens/Nana.webp';
-import imagem5 from '../../assets/imagens/Oxossi.webp';
+// Importando todas as 40 imagens manualmente
+import imagem1 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-1.jpg';
+import imagem2 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-2.jpg';
+import imagem3 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-3.jpg';
+import imagem4 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-4.jpg';
+import imagem5 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-5.jpg';
+import imagem6 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-6.jpg';
+import imagem7 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-7.jpg';
+import imagem8 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-8.jpg';
+import imagem9 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-9.jpg';
+import imagem10 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-10.jpg';
+import imagem11 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-11.jpg';
+import imagem12 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-12.jpg';
+import imagem13 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-13.jpg';
+import imagem14 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-14.jpg';
+import imagem15 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-15.jpg';
+import imagem16 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-16.jpg';
+import imagem17 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-17.jpg';
+import imagem18 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-18.jpg';
+import imagem19 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-19.jpg';
+import imagem20 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-20.jpg';
+import imagem21 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-21.jpg';
+import imagem22 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-22.jpg';
+import imagem23 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-23.jpg';
+import imagem24 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-24.jpg';
+import imagem25 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-25.jpg';
+import imagem26 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-26.jpg';
+import imagem27 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-27.jpg';
+import imagem28 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-28.jpg';
+import imagem29 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-29.jpg';
+import imagem30 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-30.jpg';
+import imagem31 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-31.jpg';
+import imagem32 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-32.jpg';
+import imagem33 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-33.jpg';
+import imagem34 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-34.jpg';
+import imagem35 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-35.jpg';
+import imagem36 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-36.jpg';
+import imagem37 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-37.jpg';
+import imagem38 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-38.jpg';
+import imagem39 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-39.jpg';
+import imagem40 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-40.jpg';
+
+const titulo1 = "ILE BABA SILVIO";
 
 const listaDeImagens = [
-  { img: imagemExemplo, texto: "Texto para a imagem base...", titulo: "Título da Imagem Base" },
-  { img: imagem1, texto: "Texto para a primeira imagem", titulo: "Título da Primeira Imagem" },
-  { img: imagem2, texto: "Texto para a segunda imagem", titulo: "Título da Segunda Imagem" },
-  { img: imagem3, texto: "Texto para a terceira imagem", titulo: "Título da Terceira Imagem" },
-  { img: imagem4, texto: "Texto para a quarta imagem", titulo: "Título da Quarta Imagem" },
-  { img: imagem5, texto: "Texto para a quinta imagem", titulo: "Título da Quinta Imagem" },
-];
+  imagem1, imagem2, imagem3, imagem4, imagem5, imagem6, imagem7, imagem8, imagem9, imagem10,
+  imagem11, imagem12, imagem13, imagem14, imagem15, imagem16, imagem17, imagem18, imagem19, imagem20,
+  imagem21, imagem22, imagem23, imagem24, imagem25, imagem26, imagem27, imagem28, imagem29, imagem30,
+  imagem31, imagem32, imagem33, imagem34, imagem35, imagem36, imagem37, imagem38, imagem39, imagem40
+].map((img, i) => ({
+  img,
+  texto: `Texto para a imagem ${i + 1}`,
+  titulo: titulo1
+}));
 
-// Reduzimos o padding superior em telas grandes
+// Estilos
+
 const PageContainer = styled(Box)`
   padding: 24px 16px;
 
@@ -48,14 +88,12 @@ const StyledCarousel = styled(Carousel)`
 
 const StyledImagem = styled("img")`
   width: 100%;
-  height: auto;
-  min-height: 500px;        /* altura mínima para telas menores */
   max-height: 600px;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 8px;
 
-  @media (min-width: 900px) {
-    min-height: 400px;
-    max-height: 900px;
+  @media (max-width: 899px) {
+    height: auto;
   }
 `;
 
@@ -69,11 +107,14 @@ const StyledCard = styled(Card)`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0 auto;
 
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   }
+
+  width: 100%;
 
   @media (max-width: 600px) {
     padding: 20px 10px;
@@ -101,41 +142,47 @@ const StyledText = styled(Typography)`
   }
 `;
 
+
 const ImageCarousel = () => {
   const [selectedText, setSelectedText] = useState(listaDeImagens[0].texto);
   const [selectedTitle, setSelectedTitle] = useState(listaDeImagens[0].titulo);
 
   return (
     <PageContainer id="image-carousel">
-      <Grid container spacing={4} alignItems="center">
-        {/* Carrossel */}
-        <Grid item xs={12} md={6}>
-          <StyledCarousel
-            showArrows={true}
-            autoPlay={true}
-            infiniteLoop={true}
-            showThumbs={false}
-            onChange={(index) => {
-              setSelectedText(listaDeImagens[index].texto);
-              setSelectedTitle(listaDeImagens[index].titulo);
-            }}
-          >
-            {listaDeImagens.map((item, index) => (
-              <Box key={index}>
-                <StyledImagem src={item.img} alt={`Imagem ${index + 1}`} />
-              </Box>
-            ))}
-          </StyledCarousel>
-        </Grid>
+      <Grid
+  container
+  spacing={4}
+  alignItems="center"
+  justifyContent="center"
+  direction={{ xs: 'column', lg: 'row' }}
+>
+  <Grid item xs={12} lg={6}>
+    <StyledCard>
+      <StyledTitle variant="h4">{selectedTitle}</StyledTitle>
+      <StyledText>{selectedText}</StyledText>
+    </StyledCard>
+  </Grid>
 
-        {/* Texto */}
-        <Grid item xs={12} md={6}>
-          <StyledCard>
-            <StyledTitle variant="h4">{selectedTitle}</StyledTitle>
-            <StyledText>{selectedText}</StyledText>
-          </StyledCard>
-        </Grid>
-      </Grid>
+  <Grid item xs={12} lg={6}>
+    <StyledCarousel
+      showArrows
+      autoPlay
+      infiniteLoop
+      showThumbs={false}
+      onChange={(index) => {
+        setSelectedText(listaDeImagens[index].texto);
+        setSelectedTitle(listaDeImagens[index].titulo);
+      }}
+    >
+      {listaDeImagens.map((item, index) => (
+        <Box key={index}>
+          <StyledImagem src={item.img} alt={`Imagem ${index + 1}`} />
+        </Box>
+      ))}
+    </StyledCarousel>
+  </Grid>
+</Grid>
+
     </PageContainer>
   );
 };

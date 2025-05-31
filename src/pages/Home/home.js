@@ -21,27 +21,13 @@ const StyledGrid = styled(Grid)`
 
 const ImageWrapper = styled(Box)`
   width: 100%;
-  max-width: 100%; // Remove limite fixo
-  height: auto; // Permite que a altura se ajuste automaticamente
-
-  // Opcionalmente, pode ajustar o padding em breakpoints para manter o espaçamento
-  @media (min-width: 900px) {
-    padding: 0 32px; // ou o que preferir
-  }
-`;
-
-
-const TextoContainer = styled(Box)`
-  padding: 16px;
-  background-color: #f9f9f9;
-  font-size: 14px;
+  max-width: 100%;
+  height: auto;
 
   @media (min-width: 900px) {
-    font-size: 18px;
-    padding: 32px;
+    padding: 0 32px;
   }
 `;
-
 
 function Home() {
   return (
@@ -55,15 +41,21 @@ function Home() {
         alignItems: "center",
       }}
     >
-      
-      {/* Container principal */}
-      <Grid item xs={12} lg={10} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: { xs: 1, sm: 2, md: 3 } }}>
-  <ImageWrapper>
-    <ImageCarousel />
-  </ImageWrapper>
-</Grid>
-
-
+      <Grid
+        item
+        xs={12}
+        lg={10}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: { xs: 1, sm: 2, md: 3 },
+        }}
+      >
+        <ImageWrapper>
+          <ImageCarousel />
+        </ImageWrapper>
+      </Grid>
     </Box>
   );
 }
