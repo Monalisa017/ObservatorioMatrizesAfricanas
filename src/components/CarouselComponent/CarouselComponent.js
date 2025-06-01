@@ -46,9 +46,43 @@ import imagem38 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MAR
 import imagem39 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-39.jpg';
 import imagem40 from '../../assets/ILE BABA SILVIO/ILE_BABA_SILVIO_POR_CARLA_MARIA-40.jpg';
 
-const titulo1 = "ILE BABA SILVIO";
+// ... (todos os imports anteriores)
 
-const listaDeImagens = [
+import imagem41 from '../../assets/ILE AZIRI/IMG_20250517_155917.jpg';
+import imagem42 from '../../assets/ILE AZIRI/IMG_20250517_155918.jpg';
+import imagem43 from '../../assets/ILE AZIRI/_MG_9071.jpg';
+import imagem44 from '../../assets/ILE AZIRI/_MG_9074.jpg';
+import imagem45 from '../../assets/ILE AZIRI/_MG_9078.jpg';
+import imagem46 from '../../assets/ILE AZIRI/_MG_9084.jpg';
+import imagem47 from '../../assets/ILE AZIRI/_MG_9085.jpg';
+import imagem48 from '../../assets/ILE AZIRI/_MG_9089.jpg';
+import imagem49 from '../../assets/ILE AZIRI/_MG_9094.jpg';
+import imagem50 from '../../assets/ILE AZIRI/_MG_9104.jpg';
+import imagem51 from '../../assets/ILE AZIRI/_MG_9109.jpg';
+import imagem52 from '../../assets/ILE AZIRI/_MG_9110.jpg';
+import imagem53 from '../../assets/ILE AZIRI/_MG_9115.jpg';
+import imagem54 from '../../assets/ILE AZIRI/_MG_9121.jpg';
+import imagem55 from '../../assets/ILE AZIRI/_MG_9126.jpg';
+import imagem56 from '../../assets/ILE AZIRI/_MG_9132.jpg';
+import imagem57 from '../../assets/ILE AZIRI/_MG_9133.jpg';
+import imagem58 from '../../assets/ILE AZIRI/_MG_9144.jpg';
+import imagem59 from '../../assets/ILE AZIRI/_MG_9151.jpg';
+import imagem60 from '../../assets/ILE AZIRI/_MG_9154.jpg';
+import imagem61 from '../../assets/ILE AZIRI/_MG_9160.jpg';
+import imagem62 from '../../assets/ILE AZIRI/_MG_9167.jpg';
+import imagem63 from '../../assets/ILE AZIRI/_MG_9169.jpg';
+import imagem64 from '../../assets/ILE AZIRI/_MG_9174.jpg';
+import imagem65 from '../../assets/ILE AZIRI/_MG_9176.jpg';
+import imagem66 from '../../assets/ILE AZIRI/_MG_9178.jpg';
+import imagem67 from '../../assets/ILE AZIRI/_MG_9182.jpg';
+import imagem68 from '../../assets/ILE AZIRI/_MG_9183.jpg';
+import imagem69 from '../../assets/ILE AZIRI/_MG_9186.jpg';
+import imagem70 from '../../assets/ILE AZIRI/_MG_9191.jpg';
+
+const titulo1 = "ILE BABA SILVIO";
+const titulo2 = "ILE AZIRI";
+
+const imagens1a40 = [
   imagem1, imagem2, imagem3, imagem4, imagem5, imagem6, imagem7, imagem8, imagem9, imagem10,
   imagem11, imagem12, imagem13, imagem14, imagem15, imagem16, imagem17, imagem18, imagem19, imagem20,
   imagem21, imagem22, imagem23, imagem24, imagem25, imagem26, imagem27, imagem28, imagem29, imagem30,
@@ -58,6 +92,18 @@ const listaDeImagens = [
   texto: `Texto para a imagem ${i + 1}`,
   titulo: titulo1
 }));
+
+const imagens41a70 = [
+  imagem41, imagem42, imagem43, imagem44, imagem45, imagem46, imagem47, imagem48, imagem49, imagem50,
+  imagem51, imagem52, imagem53, imagem54, imagem55, imagem56, imagem57, imagem58, imagem59, imagem60,
+  imagem61, imagem62, imagem63, imagem64, imagem65, imagem66, imagem67, imagem68, imagem69, imagem70
+].map((img, i) => ({
+  img,
+  texto: `Texto para a imagem ${i + 41}`,
+  titulo: titulo2
+}));
+
+const listaDeImagens = [...imagens1a40, ...imagens41a70];
 
 // Estilos
 
@@ -141,7 +187,6 @@ const StyledText = styled(Typography)`
     font-size: 1rem;
   }
 `;
-
 
 const ImageCarousel = () => {
   const [selectedText, setSelectedText] = useState(listaDeImagens[0].texto);
