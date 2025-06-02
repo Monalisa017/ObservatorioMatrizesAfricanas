@@ -226,29 +226,30 @@ const ImageCarousel = () => {
 
   <Grid item xs={12} lg={6} sx={{ display: 'flex', alignItems: 'center', height: '100%' }}>
   <Box width="100%">
-    <StyledCarousel
-      showArrows
-      autoPlay
-      infiniteLoop
-      showThumbs={false}
-      onChange={(index) => {
-        setSelectedText(listaDeImagens[index].texto);
-        setSelectedTitle(listaDeImagens[index].titulo);
-      }}
-    >
-      {listaDeImagens.map((item, index) => (
-        <Box key={index}>
-          <StyledImagem src={item.img} alt={`Imagem ${index + 1}`} />
-        </Box>
-      ))}
-    </StyledCarousel>
-  </Box>
+          <StyledCarousel
+        showThumbs={false}
+        showStatus={false}
+        infiniteLoop
+        autoPlay
+        interval={5000}
+        onChange={(index) => {
+          setSelectedText(listaDeImagens[index].texto);
+          setSelectedTitle(listaDeImagens[index].titulo);
+        }}
+        emulateTouch
+      >
+        {listaDeImagens.map((item, index) => (
+          <div key={index}>
+            <StyledImagem src={item.img} alt={`Imagem ${index + 1}`} />
+          </div>
+        ))}
+      </StyledCarousel>
+    </Box>
+  </Grid>
 </Grid>
-
-</Grid>
-
-    </PageContainer>
+</PageContainer>
   );
 };
 
 export default ImageCarousel;
+
