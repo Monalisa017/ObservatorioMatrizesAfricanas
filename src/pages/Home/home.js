@@ -23,19 +23,33 @@ const ImageWrapper = styled(Box)`
   width: 100%;
   max-width: 100%;
   height: auto;
+  border-radius: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 10px
 
-  @media (min-width: 900px) {
-    padding: 0 32px;
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    object-fit: contain; /* Mostra a imagem inteira */
   }
+
 `;
+
 
 function Home() {
   return (
     <Box
       component="div"
       sx={{
-        backgroundColor: "transparent",
-        width: "100%",
+        backgroundColor: "whitesmoke",
+        width: "80%",
+        margin: "0 auto",
+        marginTop: { xs: "10px", sm: "0px", md: "30px", lg: "20px", xl: "50px" },
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -45,6 +59,7 @@ function Home() {
         item
         xs={12}
         lg={10}
+        sm={12}
         sx={{
           display: "flex",
           justifyContent: "center",

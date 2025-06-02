@@ -110,14 +110,25 @@ const listaDeImagens = [...imagens1a40, ...imagens41a70];
 const PageContainer = styled(Box)`
   padding: 24px 16px;
 
-  @media (min-width: 900px) {
-    padding: 48px 80px 32px 80px;
-  }
 `;
 
 const StyledCarousel = styled(Carousel)`
   width: 100%;
-  height: auto;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 10px;
+
+  @media (min-width: 600px) {
+    padding-top: 20px;
+  }
+
+  @media (min-width: 900px) {
+    padding-top: 30px;
+  }
+
+  @media (min-width: 1200px) {
+    padding-top: 0px;
+  }
 
   .control-arrow {
     background-color: #fc791e !important;
@@ -127,21 +138,26 @@ const StyledCarousel = styled(Carousel)`
     padding: 10px;
     width: 45px;
     height: 45px;
-    top: 45% !important;
     z-index: 10;
+    margin: 0 10px;
   }
 `;
+
+
 
 const StyledImagem = styled("img")`
   width: 100%;
-  max-height: 600px;
+  height: 400px;
   object-fit: cover;
   border-radius: 8px;
+  object-fit: contain; /* Mostra a imagem inteira */
 
-  @media (max-width: 899px) {
-    height: auto;
+  @media (min-width: 900px) {
+    height: 500px;
+    padding-top: 0px;
   }
 `;
+
 
 const StyledCard = styled(Card)`
   background-color: #f5f5dc;
@@ -208,7 +224,8 @@ const ImageCarousel = () => {
     </StyledCard>
   </Grid>
 
-  <Grid item xs={12} lg={6}>
+  <Grid item xs={12} lg={6} sx={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+  <Box width="100%">
     <StyledCarousel
       showArrows
       autoPlay
@@ -225,7 +242,9 @@ const ImageCarousel = () => {
         </Box>
       ))}
     </StyledCarousel>
-  </Grid>
+  </Box>
+</Grid>
+
 </Grid>
 
     </PageContainer>
