@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box } from '@mui/material';
 import background from '../../assets/imagens/background.png';
 import HeaderComponent from '../HeaderComponent/HeaderComponent';
 import Home from '../../pages/Home/home';
+import Sobre from '../../pages/Sobre/sobre';
+import Contatos from '../../pages/Contatos/contatos';
+import Footer from '../../components/Footer/footer';
 
 function App() {
+  const [selectedTab, setSelectedTab] = useState('INÍCIO');
+
+  const renderPage = () => {
+    switch (selectedTab) {
+      case 'SOBRE':
+        return <Sobre />;
+      case 'CONTATOS':
+        return <Contatos />;
+      case 'INÍCIO':
+      default:
+        return <Home />;
+    }
+  };
+
   return (
+    <>
     <Box
       component="div"
       sx={{
@@ -20,14 +38,14 @@ function App() {
     >
       {/* Header fixo no topo */}
       <Box sx={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1100, width: '100%' }}>
-        <HeaderComponent />
+        <HeaderComponent selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
       </Box>
 
       {/* Conteúdo principal com padding para não ficar embaixo do header */}
       <Box
         sx={{
           paddingTop: {
-            xs: '300px',  // menor padding para telas pequenas pra não sobrepor o header
+            xs: '300px',
             sm: '280px',
             md: '180px',
             lg: '250px',
@@ -36,9 +54,13 @@ function App() {
           px: 2,
         }}
       >
-        <Home />
+        {renderPage()}
       </Box>
     </Box>
+    <Box>
+      <Footer />
+    </Box>
+    </>
   );
 }
 

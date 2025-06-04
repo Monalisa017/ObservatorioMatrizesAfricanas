@@ -176,7 +176,7 @@ const ImageCarousel = () => {
             showThumbs={false}
             infiniteLoop
             autoPlay
-            interval={8000}
+            interval={7000}
             onChange={handleChange}
             showStatus={false}
             showIndicators={true}

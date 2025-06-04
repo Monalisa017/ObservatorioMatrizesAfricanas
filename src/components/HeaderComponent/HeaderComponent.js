@@ -25,13 +25,18 @@ import {
 const drawerWidth = 240;
 
 function HeaderComponent(props) {
-  const { window } = props;
+  const { window, selectedTab, setSelectedTab } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const navItems = ['INÍCIO', 'SEMENTE CRIATIVA E SUSTENTÁVEL', 'CONTATOS'];
+  const navItems = ['INÍCIO', 'SOBRE', 'CONTATOS'];
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
+  };
+
+  const handleMenuClick = (item) => {
+    setSelectedTab(item);
+    setMobileOpen(false); // Fecha o menu mobile ao clicar
   };
 
   const drawer = (
@@ -43,11 +48,7 @@ function HeaderComponent(props) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton
-              sx={{ textAlign: 'center' }}
-              component="a"
-              href={`#${item.replace(/\s+/g, '').toLowerCase()}`}
-            >
+            <ListItemButton sx={{ textAlign: 'center' }} onClick={() => handleMenuClick(item)}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -112,7 +113,7 @@ function HeaderComponent(props) {
               <StyledListItemNav>
                 {navItems.map((item) => (
                   <StyledListItem key={item}>
-                    <CustomLinkButton component="a" href={`#${item.replace(/\s+/g, '').toLowerCase()}`}>
+                    <CustomLinkButton onClick={() => handleMenuClick(item)}>
                       {item}
                     </CustomLinkButton>
                   </StyledListItem>
@@ -148,6 +149,9 @@ function HeaderComponent(props) {
 
 HeaderComponent.propTypes = {
   window: PropTypes.func,
+  selectedTab: PropTypes.string.isRequired,
+  setSelectedTab: PropTypes.func.isRequired,
 };
 
 export default HeaderComponent;
+
