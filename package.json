@@ -26,19 +26,13 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app"
-    ],
+    "extends": ["react-app"],
     "rules": {
       "react/react-in-jsx-scope": "off"
     }
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -48,5 +42,8 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "eslint-plugin-react": "^7.37.4"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
