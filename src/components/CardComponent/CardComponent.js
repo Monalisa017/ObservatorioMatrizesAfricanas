@@ -17,7 +17,7 @@ const StyledCard = styled(Card)`
   width: 95%; /* Tornar o card mais largo */
   max-width: 100%; /* Limitar a largura máxima */
   margin-left: 35%; /* Mover o card para a direita */
-  margin-bottom: 200px;
+
   
   &:hover {
     transform: translateY(-10px) scale(1.55); /* Aumento da altura e largura */
