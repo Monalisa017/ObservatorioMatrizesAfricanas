@@ -6,14 +6,13 @@ import { Box, Grid, Typography, Card } from '@mui/material';
 import audioBabaSilvio from '../../assets/audios/ILE BABA SILVIO.mp3';
 import audioAziris from '../../assets/audios/ILE AZIRI.mp3';
 
-
-// Importar imagens dinamicamente
+// ✅ Importar imagens dinamicamente (com .default)
 const importarImagens = (requireContext) =>
-  requireContext.keys().map((key) => requireContext(key));
+  requireContext.keys().map((key) => requireContext(key).default);
 
-// Carregar imagens das pastas
-const imagensBabaSilvio = importarImagens(require.context('../../assets/ILE BABA SILVIO', false, /\.(jpg|jpeg|png)$/));
-const imagensAziris = importarImagens(require.context('../../assets/ILE AZIRI', false, /\.(jpg|jpeg|png)$/));
+// ✅ Caminhos sem espaço nos nomes das pastas
+const imagensBabaSilvio = importarImagens(require.context('../../assets/ILE_BABA_SILVIO', false, /\.(jpg|jpeg|png)$/));
+const imagensAziris = importarImagens(require.context('../../assets/ILE_AZIRI', false, /\.(jpg|jpeg|png)$/));
 
 // Montar os objetos com título e texto
 const imagens1a40 = imagensBabaSilvio.map((img, i) => ({
@@ -30,30 +29,19 @@ const imagens41a70 = imagensAziris.map((img, i) => ({
   audio: audioAziris
 }));
 
-
-// Lista final
 const listaDeImagens = [...imagens1a40, ...imagens41a70];
 
 // Estilos
-const PageContainer = styled(Box)`
-  padding: 24px 16px;
-`;
+const PageContainer = styled(Box)`padding: 24px 16px;`;
 
 const StyledCarousel = styled(Carousel)`
   width: 100%;
   height: 100%;
   margin: 0 auto;
   padding-top: 10px;
-
-  @media (min-width: 600px) {
-    padding-top: 20px;
-  }
-  @media (min-width: 900px) {
-    padding-top: 30px;
-  }
-  @media (min-width: 1200px) {
-    padding-top: 0px;
-  }
+  @media (min-width: 600px) { padding-top: 20px; }
+  @media (min-width: 900px) { padding-top: 30px; }
+  @media (min-width: 1200px) { padding-top: 0px; }
 
   .control-arrow {
     background-color: #fc791e !important;
@@ -73,7 +61,6 @@ const StyledImagem = styled("img")`
   height: 400px;
   object-fit: contain;
   border-radius: 8px;
-
   @media (min-width: 900px) {
     height: 500px;
     padding-top: 0px;
@@ -108,20 +95,14 @@ const StyledTitle = styled(Typography)`
   font-weight: bold;
   margin-bottom: 16px;
   font-size: 2rem;
-
-  @media (max-width: 600px) {
-    font-size: 1.5rem;
-  }
+  @media (max-width: 600px) { font-size: 1.5rem; }
 `;
 
 const StyledText = styled(Typography)`
   color: #6a4f2f;
   font-size: 1.1rem;
   line-height: 1.5;
-
-  @media (max-width: 600px) {
-    font-size: 1rem;
-  }
+  @media (max-width: 600px) { font-size: 1rem; }
 `;
 
 const AudioPlayer = styled("audio")`
@@ -130,29 +111,24 @@ const AudioPlayer = styled("audio")`
 `;
 
 const ImageCarousel = () => {
-
   const [selectedText, setSelectedText] = useState(listaDeImagens[0].texto);
   const [selectedTitle, setSelectedTitle] = useState(listaDeImagens[0].titulo);
   const audioRef = useRef(null);
-  const lastAudioRef = useRef(listaDeImagens[0].audio); // <- CORRETO AQUI
-
+  const lastAudioRef = useRef(listaDeImagens[0].audio);
   const [selectedItem, setSelectedItem] = useState(listaDeImagens[0]);
 
   const handleChange = (index) => {
-  const novoItem = listaDeImagens[index];
+    const novoItem = listaDeImagens[index];
+    setSelectedItem(novoItem);
+    setSelectedText(novoItem.texto);
+    setSelectedTitle(novoItem.titulo);
 
-  // Atualiza título e texto
-  setSelectedItem(novoItem);
-  setSelectedText(novoItem.texto);
-  setSelectedTitle(novoItem.titulo);
-
-  // Só muda o áudio se for diferente
-  if (audioRef.current && novoItem.audio !== lastAudioRef.current) {
-    lastAudioRef.current = novoItem.audio; // Atualiza o último áudio
-    audioRef.current.load();
-    audioRef.current.play();
-  }
-};
+    if (audioRef.current && novoItem.audio !== lastAudioRef.current) {
+      lastAudioRef.current = novoItem.audio;
+      audioRef.current.load();
+      audioRef.current.play();
+    }
+  };
 
   return (
     <PageContainer id="image-carousel">
@@ -161,13 +137,7 @@ const ImageCarousel = () => {
           <StyledCard>
             <StyledTitle variant="h4">{selectedTitle}</StyledTitle>
             <StyledText>{selectedText}</StyledText>
-              <AudioPlayer
-                ref={audioRef}
-                src={selectedItem.audio}
-                controls
-                preload="auto"
-              />
-
+            <AudioPlayer ref={audioRef} src={selectedItem.audio} controls preload="auto" />
           </StyledCard>
         </Grid>
 
@@ -181,11 +151,14 @@ const ImageCarousel = () => {
             showStatus={false}
             showIndicators={true}
           >
-            {listaDeImagens.map((item, index) => (
-              <div key={index}>
-                <StyledImagem src={item.img} alt={`Imagem ${index + 1}`} />
-              </div>
-            ))}
+            {listaDeImagens.map((item, index) => {
+              console.log("Caminho da imagem:", item.img); // 🐞 DEBUG
+              return (
+                <div key={index}>
+                  <StyledImagem src={item.img} alt={`Imagem ${index + 1}`} />
+                </div>
+              );
+            })}
           </StyledCarousel>
         </Grid>
       </Grid>
