@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import africa from '../../assets/imagens/africa.png';
 
 const ImagemEstilizada = styled.img`
@@ -11,10 +10,6 @@ const ImagemEstilizada = styled.img`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: block;
 `;
-
-
-
-
 
 export default function Imagem() {
   return <ImagemEstilizada src={africa} alt="LogoAfrica" />;

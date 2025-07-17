@@ -20,7 +20,7 @@ import {
   LogoContainer,
   ObservatorioBox,
   ObservatorioText,
-} from '../HeaderComponent/HeaderComponent.styled.js';
+} from '../HeaderComponent/HeaderComponent.styled.jsx';
 
 const drawerWidth = 240;
 

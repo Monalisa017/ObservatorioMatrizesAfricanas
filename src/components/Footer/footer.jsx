@@ -7,7 +7,7 @@ const FooterContainer = styled(Box)`
   width: 100%;
   background-color:  #5f210e;
   color:  #fc791e ;
-  padding: 24px 16px;
+  padding: 45px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;

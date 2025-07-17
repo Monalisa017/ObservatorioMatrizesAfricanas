@@ -7,12 +7,17 @@ import audioBabaSilvio from '../../assets/audios/ILE BABA SILVIO.mp3';
 import audioAziris from '../../assets/audios/ILE AZIRI.mp3';
 
 // ✅ Importar imagens dinamicamente (com .default)
-const importarImagens = (requireContext) =>
-  requireContext.keys().map((key) => requireContext(key).default);
+const importarImagens = (imagens) =>
+  Object.entries(imagens).map(([path, mod]) => mod.default);
 
 // ✅ Caminhos sem espaço nos nomes das pastas
-const imagensBabaSilvio = importarImagens(require.context('../../assets/ILE_BABA_SILVIO', false, /\.(jpg|jpeg|png)$/));
-const imagensAziris = importarImagens(require.context('../../assets/ILE_AZIRI', false, /\.(jpg|jpeg|png)$/));
+const imagensBabaSilvio = importarImagens(
+  import.meta.glob('../../assets/ILE_BABA_SILVIO/*.{jpg,jpeg,png}', { eager: true })
+);
+
+const imagensAziris = importarImagens(
+  import.meta.glob('../../assets/ILE_AZIRI/*.{jpg,jpeg,png}', { eager: true })
+);
 
 // Montar os objetos com título e texto
 const imagens1a40 = imagensBabaSilvio.map((img, i) => ({
@@ -32,16 +37,14 @@ const imagens41a70 = imagensAziris.map((img, i) => ({
 const listaDeImagens = [...imagens1a40, ...imagens41a70];
 
 // Estilos
-const PageContainer = styled(Box)`padding: 24px 16px;`;
+const PageContainer = styled(Box)`padding: 24px 16px; height:650px;`;
 
 const StyledCarousel = styled(Carousel)`
   width: 100%;
   height: 100%;
   margin: 0 auto;
   padding-top: 10px;
-  @media (min-width: 600px) { padding-top: 20px; }
-  @media (min-width: 900px) { padding-top: 30px; }
-  @media (min-width: 1200px) { padding-top: 0px; }
+
 
   .control-arrow {
     background-color: #fc791e !important;

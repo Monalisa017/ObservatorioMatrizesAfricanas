@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import styled from "styled-components";
-import ImageCarousel from "../../components/CarouselComponent/CarouselComponent";
+import ImageCarousel from "../../components/CarouselComponent/CarouselComponent.jsx";
 
 const StyledBoxGrid = styled(Box)`
   width: 100%;
@@ -41,7 +41,7 @@ const ImageWrapper = styled(Box)`
 `;
 
 
-function Home() {
+function Contatos() {
   return (
     <Box
       component="div"
@@ -68,11 +68,11 @@ function Home() {
         }}
       >
         <ImageWrapper>
-          <ImageCarousel />
+          <Typography>Contatos</Typography>
         </ImageWrapper>
       </Grid>
     </Box>
   );
 }
 
-export default Home;
+export default Contatos;

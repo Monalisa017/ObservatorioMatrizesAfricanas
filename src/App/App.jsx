@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Box } from '@mui/material';
-import background from '../../assets/imagens/background.png';
-import HeaderComponent from '../HeaderComponent/HeaderComponent';
-import Home from '../../pages/Home/home';
-import Sobre from '../../pages/Sobre/sobre';
-import Contatos from '../../pages/Contatos/contatos';
-import Footer from '../../components/Footer/footer';
+import background from '@/assets/imagens/background.png';
+import HeaderComponent from '@/components/HeaderComponent/HeaderComponent';
+import Home from '@/pages/Home/home';
+import Sobre from '../pages/Sobre/sobre';
+import Contatos from '../pages/Contatos/contatos';
+import Footer from '../components/Footer/footer';
 
 function App() {
   const [selectedTab, setSelectedTab] = useState('INÍCIO');
@@ -57,9 +57,10 @@ function App() {
         {renderPage()}
       </Box>
     </Box>
-    <Box>
-      <Footer />
-    </Box>
+    <Box sx={{ mt: -20 }}>
+  <Footer />
+</Box>
+
     </>
   );
 }
