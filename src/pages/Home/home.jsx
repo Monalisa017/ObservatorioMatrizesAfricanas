@@ -48,6 +48,7 @@ function Home() {
       sx={{
         backgroundColor: "whitesmoke",
         width: "80%",
+        height: "100%",
         margin: "0 auto",
         marginTop: { xs: "10px", sm: "0px", md: "30px", lg: "20px", xl: "50px" },
         display: "flex",

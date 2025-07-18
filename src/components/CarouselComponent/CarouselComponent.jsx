@@ -44,29 +44,49 @@ const StyledCarousel = styled(Carousel)`
   height: 100%;
   margin: 0 auto;
   padding-top: 100px;
+  position: relative;
 
+  .carousel-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .control-arrow {
-    background-color: #fc791e !important;
-    border-radius: 50%;
-    color: brown;
-    font-size: 24px;
-    padding: 10px;
-    width: 45px;
-    height: 45px;
-    z-index: 10;
-    margin: 0 10px;
+  position: absolute;
+  top: 60%; /* ↓ Desce mais a seta */
+  transform: translateY(-50%);
+  background-color: #fc791e !important;
+  border-radius: 50%;
+  color: brown;
+  font-size: 24px;
+  padding: 10px;
+  width: 45px;
+  height: 45px;
+  z-index: 10;
+
+  &.control-prev {
+    left: 10px;
+    margin-top:30%
   }
+
+  &.control-next {
+    right: 10px;
+    margin-top:30%
+  }
+}
 `;
 
 const StyledImagem = styled("img")`
   width: 100%;
-  height: 400px;
+  height: auto;
+  max-height: 400px;
   object-fit: contain;
   border-radius: 8px;
+
   @media (min-width: 900px) {
-    height: 500px;
-    padding-top: 0px;
+    max-height: 500px;
   }
 `;
 
@@ -152,13 +172,15 @@ const ImageCarousel = () => {
             interval={7000}
             onChange={handleChange}
             showStatus={false}
-            showIndicators={true}
+            showIndicators={false}
           >
             {listaDeImagens.map((item, index) => {
-              console.log("Caminho da imagem:", item.img); // 🐞 DEBUG
+              console.log("Caminho da imagem:", item.img); 
               return (
                 <div key={index}>
-                  <StyledImagem src={item.img} alt={`Imagem ${index + 1}`} />
+                  <div className="carousel-image-wrapper">
+                    <StyledImagem src={item.img} alt={`Imagem ${index + 1}`} />
+                  </div>
                 </div>
               );
             })}
