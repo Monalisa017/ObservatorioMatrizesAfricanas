@@ -45,6 +45,13 @@ export const LogoContainer = styled(Box)`
     border-radius: 50%;
     object-fit: cover;
 
+      @media (max-width: 599px) {
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
     @media (min-width: 600px) {
       width: 60px;
       height: 60px;
@@ -78,11 +85,13 @@ export const ObservatorioBox = styled(Box)`
   margin-bottom: 20px;
   gap: 10px;
 
-  @media (max-width: 959px) {
+    @media (max-width: 959px) {
     flex-direction: column;
     align-items: start;
     margin: auto;
     margin-bottom: 20px;
+    padding: 8px; /* <= Reduzido */
+    gap: 5px; /* <= Reduzido */
   }
 
   @media (min-width: 960px) {
@@ -105,6 +114,11 @@ export const ObservatorioText = styled(Typography)`
   text-align: center;
   word-break: break-word;
   width: 100%;
+
+    @media (max-width: 959px) {
+    font-size: 1.4rem !important; /* <= Reduzido */
+    text-align: center;
+  }
 
   @media (min-width: 960px) and (max-width: 1199px) {
     width: auto;

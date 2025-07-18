@@ -45,7 +45,7 @@ function App() {
       <Box
         sx={{
           paddingTop: {
-            xs: '300px',
+            xs: '170px',
             sm: '280px',
             md: '180px',
             lg: '250px',
@@ -57,7 +57,7 @@ function App() {
         {renderPage()}
       </Box>
     </Box>
-    <Box sx={{ mt: -20 }}>
+    <Box >
   <Footer />
 </Box>
 

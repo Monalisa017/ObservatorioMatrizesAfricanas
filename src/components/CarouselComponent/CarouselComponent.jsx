@@ -37,13 +37,13 @@ const imagens41a70 = imagensAziris.map((img, i) => ({
 const listaDeImagens = [...imagens1a40, ...imagens41a70];
 
 // Estilos
-const PageContainer = styled(Box)`padding: 24px 16px; height:650px;`;
+const PageContainer = styled(Box)`padding: 24px 16px;`;
 
 const StyledCarousel = styled(Carousel)`
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding-top: 10px;
+  padding-top: 100px;
 
 
   .control-arrow {
